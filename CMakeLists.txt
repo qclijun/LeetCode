@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+PROJECT(LEETCODE)
+
+MESSAGE(STATUS "PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})
+MESSAGE(STATUS "PROJECT_BINARY_DIR: " ${PROJECT_BINARY_DIR})
+
+# gtest
+enable_testing()
+find_package(GTest REQUIRED)
+message(STATUS "GTEST_FOUND: " ${GTEST_FOUND})
+message(STATUS "GTEST_INCLUDE_DIRS: " ${GTEST_INCLUDE_DIRS})
+message(STATUS "GTEST_BOTH_LIBRARIES: " ${GTEST_BOTH_LIBRARIES})
+
+# boost
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+message(STATUS "Boost PATH: " ${Boost_INCLUDE_DIRS})
+
+ADD_SUBDIRECTORY(lib)
+ADD_SUBDIRECTORY(src)
+
