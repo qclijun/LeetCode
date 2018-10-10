@@ -16,6 +16,9 @@ find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 message(STATUS "Boost PATH: " ${Boost_INCLUDE_DIRS})
 
+
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
 ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(src)
 
